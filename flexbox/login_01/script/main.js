@@ -14,13 +14,13 @@ buttonLogin.addEventListener("click", function(e) {
     return false;
   }
 
-  console.log(username, password);
-
   LoginService.doLogin(username, password)
-    .then(function (response) {
-      console.log(response.status);
-    })
-    .catch(function (e) { 
-      console.log(e);
-    });
+    .then(function(response) {
+      if (response.status == 200) {
+        response.json()
+          .then(function(data) {
+            document.body.innerText = JSON.stringify(data);
+          }).catch(function(e) {console.log(e);});
+      }
+    }).catch(function(e) {console.log(e);});
 });

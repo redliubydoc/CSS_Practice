@@ -2,6 +2,7 @@
     --color-primary-1: rgb(0,139,139);
     --color-secondary-1: rgb(0, 255, 255);
     --color-secondary-2: rgb(0, 255, 175);
+    --color-secondary-3: rgb(100, 255, 255);
 }
 
 * {
@@ -107,6 +108,7 @@ body {
 #btn-login {
     background-color: var(--color-secondary-1);
     text-align: center;
+    cursor: pointer;
 }
 
 #btn-login:hover {
@@ -114,6 +116,10 @@ body {
     transition-duration: 100ms;
     transition-property: background-color;
     transition-timing-function: ease-in-out;
+}
+
+#btn-login:active {
+    background-color: var(--color-secondary-3);
 }
 
 @media (max-width: 500px), (max-height: 550px) {
